@@ -63,6 +63,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
             bottom: TabBar(
               controller: _tabController,
               labelColor: Colors.blue,
+              unselectedLabelColor: Colors.grey,
               tabs: const <Widget>[
                 Tab(
                   icon: Icon(Icons.home),
