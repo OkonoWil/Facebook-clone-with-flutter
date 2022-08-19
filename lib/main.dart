@@ -95,34 +95,18 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 Tab(
                   icon: Icon(Icons.home),
                 ),
-                Tab(icon: Icon(Icons.live_tv_rounded)),
                 Tab(icon: Icon(Icons.store_mall_directory_outlined)),
+                Tab(icon: Icon(Icons.live_tv_rounded)),
                 Tab(icon: Icon(Icons.notifications_none_outlined)),
                 Tab(icon: Icon(Icons.menu_outlined))
               ],
             )),
         body: TabBarView(controller: _tabController, children: const <Widget>[
           UserHome(),
-          Center(
-              child: Text(
-            'Watch',
-            style: TextStyle(color: Colors.blue, fontSize: 20),
-          )),
-          Center(
-              child: Text(
-            'Marketplace',
-            style: TextStyle(color: Colors.blue, fontSize: 20),
-          )),
-          Center(
-              child: Text(
-            'Notification',
-            style: TextStyle(color: Colors.blue, fontSize: 20),
-          )),
-          Center(
-              child: Text(
-            'Menu',
-            style: TextStyle(color: Colors.blue, fontSize: 20),
-          )),
+          UserMarketPlace(),
+          UserWatch(),
+          UserNotification(),
+          UserMenu()
         ]));
   }
 }
@@ -331,6 +315,470 @@ class _UserHomeState extends State<UserHome> {
   }
 }
 
+//
+//
+// UserMarketPlace
+//
+//
+class UserMarketPlace extends StatefulWidget {
+  const UserMarketPlace({Key? key}) : super(key: key);
+
+  @override
+  State<UserMarketPlace> createState() => _UserMarketPlaceState();
+}
+
+class _UserMarketPlaceState extends State<UserMarketPlace> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Colors.grey.withOpacity(0.4),
+      width: MediaQuery.of(context).size.width,
+      height: MediaQuery.of(context).size.height,
+      child: Stack(
+        children: [
+          Flex(
+            direction: Axis.vertical,
+            children: [
+              Expanded(
+                  flex: 1,
+                  child: Container(
+                      width: MediaQuery.of(context).size.width,
+                      decoration: const BoxDecoration(color: Colors.white),
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 10),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                const Text(
+                                  'Marketplace',
+                                  style: TextStyle(
+                                      color: Color.fromARGB(255, 83, 83, 83),
+                                      fontSize: 20),
+                                ),
+                                Row(
+                                  children: [
+                                    Container(
+                                      margin: const EdgeInsets.all(8),
+                                      width: 40,
+                                      padding: const EdgeInsets.all(4),
+                                      decoration: BoxDecoration(
+                                          color:
+                                              Colors.blueGrey.withOpacity(.2),
+                                          shape: BoxShape.circle),
+                                      child: const Icon(
+                                        Icons.person,
+                                        color: Color.fromARGB(255, 22, 22, 22),
+                                      ),
+                                    ),
+                                    Container(
+                                      margin: const EdgeInsets.all(8),
+                                      width: 40,
+                                      padding: const EdgeInsets.all(4),
+                                      decoration: BoxDecoration(
+                                          color:
+                                              Colors.blueGrey.withOpacity(.2),
+                                          shape: BoxShape.circle),
+                                      child: const Icon(
+                                        Icons.search_sharp,
+                                        color: Color.fromARGB(255, 22, 22, 22),
+                                      ),
+                                    ),
+                                  ],
+                                )
+                              ],
+                            ),
+                          ),
+                          Container(
+                            padding: const EdgeInsets.symmetric(horizontal: 8),
+                            child: Row(
+                              children: [
+                                Container(
+                                  decoration: BoxDecoration(
+                                      color: Colors.blueGrey.withOpacity(.2),
+                                      borderRadius: BorderRadius.circular(15)),
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 40, vertical: 4),
+                                  margin:
+                                      const EdgeInsets.symmetric(horizontal: 8),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: const [
+                                      Icon(Icons.note_alt_outlined),
+                                      Text('Vendre')
+                                    ],
+                                  ),
+                                ),
+                                Container(
+                                  decoration: BoxDecoration(
+                                      color: Colors.blueGrey.withOpacity(.2),
+                                      borderRadius: BorderRadius.circular(15)),
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 40, vertical: 4),
+                                  margin:
+                                      const EdgeInsets.symmetric(horizontal: 8),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: const [
+                                      Icon(Icons.list_rounded),
+                                      Text('Catégories')
+                                    ],
+                                  ),
+                                )
+                              ],
+                            ),
+                          )
+                        ],
+                      ))),
+              Expanded(
+                  flex: 6,
+                  child: Container(
+                    color: Colors.blue,
+                  ))
+            ],
+          )
+        ],
+      ),
+    );
+  }
+}
+
+//
+//
+// UserWatch
+//
+//
+class UserWatch extends StatefulWidget {
+  const UserWatch({Key? key}) : super(key: key);
+
+  @override
+  State<UserWatch> createState() => _UserWatchState();
+}
+
+class _UserWatchState extends State<UserWatch> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Colors.grey.withOpacity(0.4),
+      width: MediaQuery.of(context).size.width,
+      height: MediaQuery.of(context).size.height,
+      child: Stack(
+        children: [
+          Flex(
+            direction: Axis.vertical,
+            children: [
+              Expanded(
+                  flex: 1,
+                  child: Container(
+                      width: MediaQuery.of(context).size.width,
+                      decoration: const BoxDecoration(color: Colors.white),
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 10),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                const Text(
+                                  'Watch',
+                                  style: TextStyle(
+                                      color: Color.fromARGB(255, 83, 83, 83),
+                                      fontSize: 20),
+                                ),
+                                Row(
+                                  children: [
+                                    Container(
+                                      margin: const EdgeInsets.all(8),
+                                      width: 40,
+                                      padding: const EdgeInsets.all(4),
+                                      decoration: BoxDecoration(
+                                          color:
+                                              Colors.blueGrey.withOpacity(.2),
+                                          shape: BoxShape.circle),
+                                      child: const Icon(
+                                        Icons.add,
+                                        color: Color.fromARGB(255, 22, 22, 22),
+                                      ),
+                                    ),
+                                    Container(
+                                      margin: const EdgeInsets.all(8),
+                                      width: 40,
+                                      padding: const EdgeInsets.all(4),
+                                      decoration: BoxDecoration(
+                                          color:
+                                              Colors.blueGrey.withOpacity(.2),
+                                          shape: BoxShape.circle),
+                                      child: const Icon(
+                                        Icons.person,
+                                        color: Color.fromARGB(255, 22, 22, 22),
+                                      ),
+                                    ),
+                                    Container(
+                                      margin: const EdgeInsets.all(8),
+                                      width: 40,
+                                      padding: const EdgeInsets.all(4),
+                                      decoration: BoxDecoration(
+                                          color:
+                                              Colors.blueGrey.withOpacity(.2),
+                                          shape: BoxShape.circle),
+                                      child: const Icon(
+                                        Icons.search_sharp,
+                                        color: Color.fromARGB(255, 22, 22, 22),
+                                      ),
+                                    ),
+                                  ],
+                                )
+                              ],
+                            ),
+                          ),
+                          Container(
+                            padding: const EdgeInsets.symmetric(horizontal: 8),
+                            child: Row(
+                              children: const [
+                                // Container(
+                                //   decoration: BoxDecoration(
+                                //       color: Colors.blueGrey.withOpacity(.2),
+                                //       borderRadius: BorderRadius.circular(15)),
+                                //   padding: const EdgeInsets.symmetric(
+                                //       horizontal: 40, vertical: 4),
+                                //   margin:
+                                //       const EdgeInsets.symmetric(horizontal: 8),
+                                //   child: Row(
+                                //     mainAxisAlignment: MainAxisAlignment.center,
+                                //     children: const [
+                                //       Icon(Icons.note_alt_outlined),
+                                //       Text('Vendre')
+                                //     ],
+                                //   ),
+                                // ),
+                                // Container(
+                                //   decoration: BoxDecoration(
+                                //       color: Colors.blueGrey.withOpacity(.2),
+                                //       borderRadius: BorderRadius.circular(15)),
+                                //   padding: const EdgeInsets.symmetric(
+                                //       horizontal: 40, vertical: 4),
+                                //   margin:
+                                //       const EdgeInsets.symmetric(horizontal: 8),
+                                //   child: Row(
+                                //     mainAxisAlignment: MainAxisAlignment.center,
+                                //     children: const [
+                                //       Icon(Icons.list_rounded),
+                                //       Text('Catégories')
+                                //     ],
+                                //   ),
+                                // )
+                              ],
+                            ),
+                          )
+                        ],
+                      ))),
+              Expanded(
+                  flex: 6,
+                  child: Container(
+                    color: Colors.greenAccent,
+                  ))
+            ],
+          )
+        ],
+      ),
+    );
+  }
+}
+
+//
+//
+// UserNotification
+//
+//
+class UserNotification extends StatefulWidget {
+  const UserNotification({Key? key}) : super(key: key);
+
+  @override
+  State<UserNotification> createState() => _UserNotificationState();
+}
+
+class _UserNotificationState extends State<UserNotification> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Colors.grey.withOpacity(0.4),
+      width: MediaQuery.of(context).size.width,
+      height: MediaQuery.of(context).size.height,
+      child: Stack(
+        children: [
+          Flex(
+            direction: Axis.vertical,
+            children: [
+              Expanded(
+                  flex: 1,
+                  child: Container(
+                      width: MediaQuery.of(context).size.width,
+                      decoration: const BoxDecoration(color: Colors.white),
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 10),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                const Text(
+                                  'Notification',
+                                  style: TextStyle(
+                                      color: Color.fromARGB(255, 83, 83, 83),
+                                      fontSize: 20),
+                                ),
+                                Row(
+                                  children: [
+                                    Container(
+                                      margin: const EdgeInsets.all(8),
+                                      width: 40,
+                                      padding: const EdgeInsets.all(4),
+                                      decoration: BoxDecoration(
+                                          color:
+                                              Colors.blueGrey.withOpacity(.2),
+                                          shape: BoxShape.circle),
+                                      child: const Icon(
+                                        Icons.search_sharp,
+                                        color: Color.fromARGB(255, 22, 22, 22),
+                                      ),
+                                    ),
+                                  ],
+                                )
+                              ],
+                            ),
+                          ),
+                          Container(
+                            padding: const EdgeInsets.symmetric(horizontal: 8),
+                            child: Row(
+                              children: const [],
+                            ),
+                          )
+                        ],
+                      ))),
+              Expanded(
+                  flex: 12,
+                  child: Container(
+                    color: Colors.white,
+                    child: NotificationView(),
+                  ))
+            ],
+          )
+        ],
+      ),
+    );
+  }
+}
+
+//
+//
+// Menu
+//
+//
+class UserMenu extends StatefulWidget {
+  const UserMenu({Key? key}) : super(key: key);
+
+  @override
+  State<UserMenu> createState() => _UserMenuState();
+}
+
+class _UserMenuState extends State<UserMenu> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Colors.grey.withOpacity(0.4),
+      width: MediaQuery.of(context).size.width,
+      height: MediaQuery.of(context).size.height,
+      child: Stack(
+        children: [
+          Flex(
+            direction: Axis.vertical,
+            children: [
+              Expanded(
+                  flex: 1,
+                  child: Container(
+                      width: MediaQuery.of(context).size.width,
+                      decoration: const BoxDecoration(color: Colors.white),
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 10),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                const Text(
+                                  'Menu',
+                                  style: TextStyle(
+                                      color: Color.fromARGB(255, 83, 83, 83),
+                                      fontSize: 20),
+                                ),
+                                Row(
+                                  children: [
+                                    Container(
+                                      margin: const EdgeInsets.all(8),
+                                      width: 40,
+                                      padding: const EdgeInsets.all(4),
+                                      decoration: BoxDecoration(
+                                          color:
+                                              Colors.blueGrey.withOpacity(.2),
+                                          shape: BoxShape.circle),
+                                      child: const Icon(
+                                        Icons.settings,
+                                        color: Color.fromARGB(255, 22, 22, 22),
+                                      ),
+                                    ),
+                                    Container(
+                                      margin: const EdgeInsets.all(8),
+                                      width: 40,
+                                      padding: const EdgeInsets.all(4),
+                                      decoration: BoxDecoration(
+                                          color:
+                                              Colors.blueGrey.withOpacity(.2),
+                                          shape: BoxShape.circle),
+                                      child: const Icon(
+                                        Icons.search_sharp,
+                                        color: Color.fromARGB(255, 22, 22, 22),
+                                      ),
+                                    ),
+                                  ],
+                                )
+                              ],
+                            ),
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              const CircleAvatar(),
+                              Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: const [
+                                  Text(
+                                    "Okono Wilfried",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.w700,
+                                        fontSize: 17),
+                                  ),
+                                  Text("Voir votre profil")
+                                ],
+                              )
+                            ],
+                          )
+                        ],
+                      ))),
+              Expanded(
+                  flex: 6,
+                  child: Container(
+                    color: Colors.redAccent,
+                  ))
+            ],
+          )
+        ],
+      ),
+    );
+  }
+}
+
 class FacebookCard extends StatefulWidget {
   const FacebookCard({Key? key}) : super(key: key);
 
@@ -532,6 +980,350 @@ class _FacebookCardState extends State<FacebookCard> {
               )),
         ],
       ),
+    );
+  }
+}
+
+/////////////
+/////////////
+/////////////  NotificationView
+/////////////
+/////////////
+class NotificationView extends StatefulWidget {
+  const NotificationView({Key? key}) : super(key: key);
+
+  @override
+  State<NotificationView> createState() => _NotificationViewState();
+}
+
+class _NotificationViewState extends State<NotificationView> {
+  @override
+  Widget build(BuildContext context) {
+    return ListView(
+      children: <Widget>[
+        const ListTile(
+          leading: CircleAvatar(),
+          title: Text(
+            "Flutter a accepté votre invitation",
+          ),
+          subtitle: Text("Hier à 22:23"),
+          trailing: Icon(Icons.more_horiz_rounded),
+        ),
+        const ListTile(
+          leading: CircleAvatar(),
+          title: Text(
+            "Laravel a accepté votre invitation",
+          ),
+          subtitle: Text("Hier à 07:23"),
+          trailing: Icon(Icons.more_horiz_rounded),
+        ),
+        const ListTile(
+          leading: CircleAvatar(),
+          title: Text(
+            "wil a publié dans One Piece Fandom Officiel jeudi:<<Si tu peux le dépouiller de son épée tu pourras...>>",
+          ),
+          subtitle: Text("Hier à 07:23"),
+          isThreeLine: true,
+          trailing: Icon(Icons.more_horiz_rounded),
+        ),
+        Container(
+          padding: const EdgeInsets.symmetric(horizontal: 17, vertical: 5),
+          margin: const EdgeInsets.symmetric(vertical: 8),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const CircleAvatar(),
+              Expanded(
+                  child: Container(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 10,
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: const [
+                        Text(
+                          "Java",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w700, fontSize: 17),
+                        ),
+                        Text(
+                          " a accepté votre invitation",
+                          style: TextStyle(fontSize: 17),
+                        ),
+                      ],
+                    ),
+                    const Text(
+                      "Hier à 20:14",
+                      style: TextStyle(color: Colors.grey),
+                    )
+                  ],
+                ),
+              )),
+              const Icon(Icons.more_horiz_outlined)
+            ],
+          ),
+        ),
+        Container(
+          padding: const EdgeInsets.symmetric(horizontal: 17, vertical: 5),
+          margin: const EdgeInsets.symmetric(vertical: 8),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const CircleAvatar(),
+              Expanded(
+                  child: Container(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 10,
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: const [
+                        Text(
+                          "Java",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w700, fontSize: 17),
+                        ),
+                        Text(
+                          " a accepté votre invitation",
+                          style: TextStyle(fontSize: 17),
+                        ),
+                      ],
+                    ),
+                    const Text(
+                      "Hier à 20:14",
+                      style: TextStyle(color: Colors.grey),
+                    )
+                  ],
+                ),
+              )),
+              const Icon(Icons.more_horiz_outlined)
+            ],
+          ),
+        ),
+        Container(
+          padding: const EdgeInsets.symmetric(horizontal: 17, vertical: 5),
+          margin: const EdgeInsets.symmetric(vertical: 8),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const CircleAvatar(),
+              Expanded(
+                  child: Container(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 10,
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: const [
+                        Text(
+                          "Java",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w700, fontSize: 17),
+                        ),
+                        Text(
+                          " a accepté votre invitation",
+                          style: TextStyle(fontSize: 17),
+                        ),
+                      ],
+                    ),
+                    const Text(
+                      "Hier à 20:14",
+                      style: TextStyle(color: Colors.grey),
+                    )
+                  ],
+                ),
+              )),
+              const Icon(Icons.more_horiz_outlined)
+            ],
+          ),
+        ),
+        const ListTile(
+          leading: CircleAvatar(),
+          title: Text(
+            "Flutter a accepté votre invitation",
+          ),
+          subtitle: Text("Hier à 22:23"),
+          trailing: Icon(Icons.more_horiz_rounded),
+        ),
+        const ListTile(
+          leading: CircleAvatar(),
+          title: Text(
+            "Laravel a accepté votre invitation",
+          ),
+          subtitle: Text("Hier à 07:23"),
+          trailing: Icon(Icons.more_horiz_rounded),
+        ),
+        const ListTile(
+          leading: CircleAvatar(),
+          title: Text(
+            "Flutter a accepté votre invitation",
+          ),
+          subtitle: Text("Hier à 22:23"),
+          trailing: Icon(Icons.more_horiz_rounded),
+        ),
+        const ListTile(
+          leading: CircleAvatar(),
+          title: Text(
+            "Laravel a accepté votre invitation",
+          ),
+          subtitle: Text("Hier à 07:23"),
+          trailing: Icon(Icons.more_horiz_rounded),
+        ),
+        const ListTile(
+          leading: CircleAvatar(),
+          title: Text(
+            "wil a publié dans One Piece Fandom Officiel jeudi:<<Si tu peux le dépouiller de son épée tu pourras...>>",
+          ),
+          subtitle: Text("Hier à 07:23"),
+          isThreeLine: true,
+          trailing: Icon(Icons.more_horiz_rounded),
+        ),
+        Container(
+          padding: const EdgeInsets.symmetric(horizontal: 17, vertical: 5),
+          margin: const EdgeInsets.symmetric(vertical: 8),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const CircleAvatar(),
+              Expanded(
+                  child: Container(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 10,
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: const [
+                        Text(
+                          "Java",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w700, fontSize: 17),
+                        ),
+                        Text(
+                          " a accepté votre invitation",
+                          style: TextStyle(fontSize: 17),
+                        ),
+                      ],
+                    ),
+                    const Text(
+                      "Hier à 20:14",
+                      style: TextStyle(color: Colors.grey),
+                    )
+                  ],
+                ),
+              )),
+              const Icon(Icons.more_horiz_outlined)
+            ],
+          ),
+        ),
+        Container(
+          padding: const EdgeInsets.symmetric(horizontal: 17, vertical: 5),
+          margin: const EdgeInsets.symmetric(vertical: 8),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const CircleAvatar(),
+              Expanded(
+                  child: Container(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 10,
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: const [
+                        Text(
+                          "Java",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w700, fontSize: 17),
+                        ),
+                        Text(
+                          " a accepté votre invitation",
+                          style: TextStyle(fontSize: 17),
+                        ),
+                      ],
+                    ),
+                    const Text(
+                      "Hier à 20:14",
+                      style: TextStyle(color: Colors.grey),
+                    )
+                  ],
+                ),
+              )),
+              const Icon(Icons.more_horiz_outlined)
+            ],
+          ),
+        ),
+        Container(
+          padding: const EdgeInsets.symmetric(horizontal: 17, vertical: 5),
+          margin: const EdgeInsets.symmetric(vertical: 8),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const CircleAvatar(),
+              Expanded(
+                  child: Container(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 10,
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: const [
+                        Text(
+                          "Java",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w700, fontSize: 17),
+                        ),
+                        Text(
+                          " a accepté votre invitation",
+                          style: TextStyle(fontSize: 17),
+                        ),
+                      ],
+                    ),
+                    const Text(
+                      "Hier à 20:14",
+                      style: TextStyle(color: Colors.grey),
+                    )
+                  ],
+                ),
+              )),
+              const Icon(Icons.more_horiz_outlined)
+            ],
+          ),
+        ),
+        const ListTile(
+          leading: CircleAvatar(),
+          title: Text(
+            "Flutter a accepté votre invitation",
+          ),
+          subtitle: Text("Hier à 22:23"),
+          trailing: Icon(Icons.more_horiz_rounded),
+        ),
+        const ListTile(
+          leading: CircleAvatar(),
+          title: Text(
+            "Laravel a accepté votre invitation",
+          ),
+          subtitle: Text("Hier à 07:23"),
+          trailing: Icon(Icons.more_horiz_rounded),
+        ),
+      ],
     );
   }
 }
