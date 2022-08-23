@@ -108,6 +108,11 @@ class _UserHomeState extends State<UserHome> {
                                 Container(
                                   margin: const EdgeInsets.only(left: 5),
                                   decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                        fit: BoxFit.cover,
+                                        image: AssetImage(
+                                            "assets/images/stories/storie${i % 5 + 1}.jpg"),
+                                      ),
                                       color: Colors.primaries[2 * i],
                                       borderRadius: BorderRadius.circular(15)),
                                   height: MediaQuery.of(context).size.height,
@@ -149,6 +154,11 @@ class _UserHomeState extends State<UserHome> {
                                 Container(
                                   margin: const EdgeInsets.only(left: 5),
                                   decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                        fit: BoxFit.cover,
+                                        image: AssetImage(
+                                            "assets/images/stories/reel${i % 5 + 1}.jpg"),
+                                      ),
                                       color: Colors.primaries[17 - 2 * i],
                                       borderRadius: BorderRadius.circular(15)),
                                   height: MediaQuery.of(context).size.height,
