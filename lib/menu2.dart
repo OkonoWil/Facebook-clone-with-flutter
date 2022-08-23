@@ -1,5 +1,3 @@
-import 'package:facebook_clone/facebook_card.dart';
-import 'package:facebook_clone/market_place_view.dart';
 import 'package:flutter/material.dart';
 
 //
