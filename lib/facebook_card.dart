@@ -48,9 +48,10 @@ class _FacebookCardState extends State<FacebookCard> {
                                 color: Colors.white,
                                 width: 3,
                               ),
-                              // image: const DecorationImage(
-                              //     image: AssetImage("/assets/images/image1.jpg"),
-                              //     fit: BoxFit.cover),
+                              image: const DecorationImage(
+                                  image: AssetImage(
+                                      "assets/images/profils/pp3.jpg"),
+                                  fit: BoxFit.cover),
                             ),
                           ),
                         ],

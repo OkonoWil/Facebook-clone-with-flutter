@@ -3,7 +3,7 @@ import 'package:facebook_clone/user_home.dart';
 import 'package:facebook_clone/user_notification.dart';
 import 'package:facebook_clone/user_market_place.dart';
 import 'package:facebook_clone/user_watch.dart';
-import 'package:facebook_clone/menu.dart';
+import 'package:facebook_clone/menu2.dart';
 
 void main() {
   runApp(const MyApp());

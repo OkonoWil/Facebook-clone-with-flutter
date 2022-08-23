@@ -1,3 +1,4 @@
+import 'package:facebook_clone/market_place_view.dart';
 import 'package:flutter/material.dart';
 
 //
@@ -78,6 +79,7 @@ class _UserMarketPlaceState extends State<UserMarketPlace> {
                           Container(
                             padding: const EdgeInsets.symmetric(horizontal: 8),
                             child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Container(
                                   decoration: BoxDecoration(
@@ -119,7 +121,8 @@ class _UserMarketPlaceState extends State<UserMarketPlace> {
               Expanded(
                   flex: 6,
                   child: Container(
-                    color: Colors.blue,
+                    color: Colors.white,
+                    child: const MarketPlaceView(),
                   ))
             ],
           )

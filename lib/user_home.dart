@@ -29,7 +29,7 @@ class _UserHomeState extends State<UserHome> {
           children: [
             Container(
               width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height * .1,
+              height: 70.0,
               decoration: const BoxDecoration(
                 color: Colors.white,
               ),
@@ -38,7 +38,10 @@ class _UserHomeState extends State<UserHome> {
                 child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      const CircleAvatar(),
+                      const CircleAvatar(
+                        backgroundImage:
+                            AssetImage('assets/images/profils/pp1.jpg'),
+                      ),
                       Expanded(
                           child: Padding(
                               padding:
@@ -73,7 +76,7 @@ class _UserHomeState extends State<UserHome> {
             ),
             Container(
               width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height * .32,
+              height: 270,
               decoration: const BoxDecoration(
                 color: Colors.white,
               ),
@@ -108,8 +111,7 @@ class _UserHomeState extends State<UserHome> {
                                       color: Colors.primaries[2 * i],
                                       borderRadius: BorderRadius.circular(15)),
                                   height: MediaQuery.of(context).size.height,
-                                  width:
-                                      MediaQuery.of(context).size.width / 3.5,
+                                  width: 114,
                                   child: Padding(
                                     padding: const EdgeInsets.all(8),
                                     child: Column(
@@ -122,6 +124,8 @@ class _UserHomeState extends State<UserHome> {
                                               backgroundColor: Colors
                                                   .primaries.reversed
                                                   .elementAt(i),
+                                              backgroundImage: AssetImage(
+                                                  "assets/images/profils/pp${i % 3 + 1}.jpg"),
                                             )
                                           ],
                                         ),
@@ -162,6 +166,8 @@ class _UserHomeState extends State<UserHome> {
                                               backgroundColor: Colors
                                                   .primaries.reversed
                                                   .elementAt(17 - 2 * i),
+                                              backgroundImage: AssetImage(
+                                                  "assets/images/profils/pp${i % 3 + 1}.jpg"),
                                             )
                                           ],
                                         ),
