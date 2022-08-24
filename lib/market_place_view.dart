@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:facebook_clone/Article.dart';
+import 'package:facebook_clone/article.dart';
 
 /////////////
 /////////////

@@ -214,6 +214,17 @@ class _UserHomeState extends State<UserHome> {
               height: 10,
             ),
             const FacebookCard(),
+            const FacebookCard(),
+            const Divider(
+              thickness: .01,
+              height: 10,
+            ),
+            const FacebookCard(),
+            const Divider(
+              thickness: .01,
+              height: 10,
+            ),
+            const FacebookCard(),
           ],
         ),
       ),
